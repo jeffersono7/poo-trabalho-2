@@ -5,14 +5,22 @@ import java.util.Iterator;
 
 public class Group<T> implements Collection<T> {
 
+	private T[] group;
+
+	public Group() {
+	}
+
 	@Override
 	public boolean add(T t) {
+
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean addAll(Collection<? extends T> c) {
+
+
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -82,5 +90,4 @@ public class Group<T> implements Collection<T> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
