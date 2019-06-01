@@ -10,6 +10,7 @@ public class EstoqueView implements View {
     public EstoqueView(EstoqueController controller) {
         this.controller = controller;
     }
+    
     public void init() {
 
     }

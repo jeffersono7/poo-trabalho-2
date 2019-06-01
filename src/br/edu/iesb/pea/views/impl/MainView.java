@@ -30,7 +30,7 @@ public class MainView implements View {
      */
     public void init() {
 
-        this.showHeader();
+        this.showMenu();
 
         String opcao = this.scanner.nextLine();
 
@@ -57,7 +57,7 @@ public class MainView implements View {
         }
     }
 
-    private void showHeader() {
+    private void showMenu() {
 
         System.out.println("########################################################");
         System.out.println("#                                                       #");
