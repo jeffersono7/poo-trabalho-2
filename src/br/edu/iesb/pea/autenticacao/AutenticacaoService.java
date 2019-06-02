@@ -1,15 +1,14 @@
 package br.edu.iesb.pea.autenticacao;
 
-public class AutenticacaoService {
+import br.edu.iesb.pea.autenticacao.exceptions.ErroAutenticacaoException;
 
-    private static final String usuario = "user";
-    private static final String senha = "123";
+public interface AutenticacaoService {
 
-    public boolean autenticar(String usuario, String senha) {
-
-        boolean usuarioCerto = AutenticacaoService.usuario.equals(usuario);
-        boolean senhaCerta = AutenticacaoService.senha.equals(senha);
-
-        return usuarioCerto && senhaCerta;
-    }
+    /**
+     * <h3>Método para realizar login na aplicação.</h3>
+     *
+     * <p>Lança exception caso usuario ou senha inválidos.</p>
+     * @throws ErroAutenticacaoException
+     */
+    void login() throws ErroAutenticacaoException;
 }

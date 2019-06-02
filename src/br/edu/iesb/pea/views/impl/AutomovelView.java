@@ -1,6 +1,8 @@
 package br.edu.iesb.pea.views.impl;
 
+import br.edu.iesb.pea.autenticacao.exceptions.ErroAutenticacaoException;
 import br.edu.iesb.pea.controllers.AutomovelController;
+import br.edu.iesb.pea.models.Automovel;
 import br.edu.iesb.pea.views.View;
 
 import java.util.Scanner;
@@ -25,6 +27,14 @@ public class AutomovelView implements View {
         switch (option) {
 
             case 1:
+                try {
+                    Automovel result = this.controller.cadastrarAutomovel();
+
+                    System.out.println("\n\n\tAutomóvel " + result.getNome() + "salvo com sucesso!");
+                } catch (ErroAutenticacaoException e) {
+
+                    System.out.println("\n\n\tLogin inválido!");
+                }
                 break;
             case 2:
                 break;
@@ -32,6 +42,21 @@ public class AutomovelView implements View {
                 System.out.println("\n\n\tOpção não disponível!");
                 break;
         }
+    }
+
+    /**
+     * Formulário para criação de automóvel.
+     *
+     * @return
+     */
+    public Automovel formAutomovel() {
+
+        Automovel automovel = new Automovel();
+
+        System.out.println("\n\n\tDigite o nome do automóvel: ");
+        automovel.setNome(scanner.nextLine());
+
+        return automovel;
     }
 
     /**

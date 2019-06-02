@@ -64,6 +64,7 @@ public class MainView implements View {
         System.out.println("#       PEA - Projeto Estações de Autoatendimento       #");
         System.out.println("#                                                       #");
         System.out.println("#                              Author: Jefferson Farias #");
+        System.out.println("#     https://github.com/jeffersono7/poo-trabalho-2.git #");
         System.out.println("#                                                       #");
         System.out.println("#   1- Manter Automóveis                                #");
         System.out.println("#   2- Comprar automóveis                               #");
