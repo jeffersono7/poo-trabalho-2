@@ -1,4 +1,11 @@
 package br.edu.iesb.pea.daos.impl;
 
-public class AutomovelDAO {
+import br.edu.iesb.pea.models.Automovel;
+
+public class AutomovelDAO implements br.edu.iesb.pea.daos.AutomovelDAO {
+
+    public Automovel save(Automovel automovel) {
+
+        return null;
+    }
 }
