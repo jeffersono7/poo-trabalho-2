@@ -7,6 +7,7 @@ import br.edu.iesb.pea.controllers.CarrinhoController;
 import br.edu.iesb.pea.controllers.PedidoController;
 import br.edu.iesb.pea.daos.impl.AutomovelDAO;
 import br.edu.iesb.pea.daos.impl.CarrinhoDAO;
+import br.edu.iesb.pea.models.Automovel;
 import br.edu.iesb.pea.views.impl.AutomovelView;
 import br.edu.iesb.pea.views.impl.CarrinhoView;
 import br.edu.iesb.pea.views.impl.MainView;
@@ -23,6 +24,10 @@ public class Pea {
         AutenticacaoService autenticacaoService = new AutenticacaoServiceImpl(scanner);
 
         AutomovelDAO automovelDAO = new AutomovelDAO();
+
+        // popula com automóveis
+        preencheAutomoveis(automovelDAO);
+
         AutomovelController automovelController = new AutomovelController(autenticacaoService, automovelDAO);
         AutomovelView automovelView = new AutomovelView(automovelController, scanner);
 
@@ -40,6 +45,28 @@ public class Pea {
                 pedidoView);
 
         mainView.init();
+    }
+
+    public static void preencheAutomoveis(br.edu.iesb.pea.daos.AutomovelDAO dao) {
+
+        Automovel automovel = new Automovel();
+        automovel.setPossuiCorFosca(true);
+        automovel.setNome("UP");
+        automovel.setValor(55000.43);
+
+        Automovel automovel2 = new Automovel();
+        automovel.setPossuiCorFosca(true);
+        automovel.setNome("Corolla");
+        automovel.setValor(78050.43);
+
+        Automovel automovel3 = new Automovel();
+        automovel.setPossuiCorFosca(false);
+        automovel.setNome("Celta");
+        automovel.setValor(19000.43);
+
+        dao.save(automovel);
+        dao.save(automovel2);
+        dao.save(automovel3);
     }
 
 }
