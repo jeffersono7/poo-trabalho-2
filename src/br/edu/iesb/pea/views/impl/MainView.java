@@ -9,18 +9,17 @@ public class MainView implements View {
     private Scanner scanner;
     private AutomovelView automovelView;
     private CarrinhoView carrinhoView;
-    private EstoqueView estoqueView;
     private PedidoView pedidoView;
 
     public MainView(Scanner scanner,
                     AutomovelView automovelView,
                     CarrinhoView carrinhoView,
-                    EstoqueView estoqueView,
                     PedidoView pedidoView) {
 
         this.scanner = scanner;
         this.automovelView = automovelView;
-        this.estoqueView = estoqueView;
+        this.carrinhoView = carrinhoView;
+        this.pedidoView = pedidoView;
     }
 
     /**
@@ -30,11 +29,17 @@ public class MainView implements View {
      */
     public void init() {
 
-        this.showMenu();
+        String opcao;
 
-        String opcao = this.scanner.nextLine();
+        do {
 
-        chooseView(Integer.valueOf(opcao));
+            this.showMenu();
+
+            opcao = this.scanner.nextLine();
+
+            chooseView(Integer.valueOf(opcao));
+
+        } while (!opcao.equals("4"));
     }
 
     private void chooseView(Integer opcao) {
@@ -50,9 +55,6 @@ public class MainView implements View {
                 this.pedidoView.init();
                 break;
             case 4:
-                this.estoqueView.init();
-                break;
-            case 5:
                 break;
         }
     }
@@ -69,8 +71,7 @@ public class MainView implements View {
         System.out.println("#   1- Manter Automóveis                                #");
         System.out.println("#   2- Comprar automóveis                               #");
         System.out.println("#   3- Pedido                                           #");
-        System.out.println("#   4- Controlar estoque                                #");
-        System.out.println("#   5- Sair                                             #");
+        System.out.println("#   4- Sair                                             #");
         System.out.println("#                                                       #");
         System.out.println("   Digite uma opção: ");
     }

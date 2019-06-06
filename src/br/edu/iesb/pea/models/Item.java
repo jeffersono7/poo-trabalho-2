@@ -4,8 +4,9 @@ public class Item {
 
     private Automovel automovel;
     private Integer quantidade;
-    private String cor;
     private Double valor;
+    private String cor;
+    private boolean ehFosca;
 
     public Automovel getAutomovel() {
         return automovel;
@@ -23,6 +24,14 @@ public class Item {
         this.quantidade = quantidade;
     }
 
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
     public String getCor() {
         return cor;
     }
@@ -31,11 +40,11 @@ public class Item {
         this.cor = cor;
     }
 
-    public Double getValor() {
-        return valor;
+    public boolean isEhFosca() {
+        return ehFosca;
     }
 
-    public void setValor(Double valor) {
-        this.valor = valor;
+    public void setEhFosca(boolean ehFosca) {
+        this.ehFosca = ehFosca;
     }
 }
