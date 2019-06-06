@@ -89,12 +89,15 @@ public class CarrinhoView implements View {
 
         Group<Automovel> automovels = automovelController.listarAutomoveis();
 
+
         System.out.println("\n\nListando:");
 
-        automovels.forEach(automovel -> {
+        for (int i = 0; i < automovels.size(); i++) {
+            Automovel a = (Automovel)automovels.toArray()[i];
+            if (a != null)
+                System.out.println("\n\tCarro: " + a.getId() + ", nome: " + a.getNome());
+        }
 
-            System.out.println("\n\tCarro: " + automovel.getId() + ", nome: " + automovel.getNome());
-        });
 
         System.out.println("\n");
     }

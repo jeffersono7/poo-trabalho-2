@@ -68,5 +68,4 @@ public class Pea {
         dao.save(automovel2);
         dao.save(automovel3);
     }
-
 }

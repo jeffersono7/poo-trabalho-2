@@ -1,7 +1,10 @@
 package br.edu.iesb.pea.utils;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Group<T> implements Collection<T> {
 
